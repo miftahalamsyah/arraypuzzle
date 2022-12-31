@@ -1,0 +1,115 @@
+.board-neu {
+  user-select: none;
+  position: relative;
+  margin: 3em auto;
+
+  background-color: #FFFFFF;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  border: 0.9em #202020;
+  border-radius: 1em;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.board-bg {
+  user-select: none;
+  position: relative;
+  margin: 3em auto;
+
+  background-color: #EEEEEE;
+  background-image: url(/public/img/index.jpg);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  border: 0.9em solid black;
+  border-radius: 1em;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.tile-bg {
+  cursor: pointer;
+
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  font-size: 2em;
+  font-weight: bold;
+
+  display: grid;
+  place-items: center;
+
+  background: #EEEEEE;
+  color: #202020;
+  border-radius: 0.9em;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.tile-neu {
+  cursor: pointer;
+
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  font-size: 2em;
+  font-weight: bold;
+
+  display: grid;
+  place-items: center;
+
+  background: #EEEEEE;
+  color: #202020;
+  border-radius: 0.1em;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.tile_correct-neu {
+  background-color: hsl(120 69% 65%);
+  color: #202020;
+}
+
+.tile_correct-bg {
+  background-image: none;
+  opacity: 0.6;
+  background-color: hsl(120 69% 65%);
+  color: var(--surface4);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: #202020;
+  border-radius: 1em;
+
+  z-index: 10;
+
+  display: grid;
+  place-items: center;
+}
+
+.play-again {
+  font-size: 1.3em;
+  font-weight: bold;
+
+  background-color: #EEEEEE;
+  color: #202020;
+
+  padding: 0.825em 1.2em;
+  border-radius: 1em;
+
+  margin-bottom: 2em;
+}
+
+.play-again:hover {
+  background-color: #EFEFEF;
+}

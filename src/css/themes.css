@@ -1,0 +1,229 @@
+* {
+  /* brand foundation */
+  --brand-hue: 260;
+  --brand-saturation: 100%;
+  --brand-lightness: 50%;
+
+  /* light */
+  --brand-light: hsl(
+    var(--brand-hue) var(--brand-saturation) var(--brand-lightness)
+  );
+  --text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
+  --text2-light: hsl(var(--brand-hue) 30% 30%);
+  --surface1-light: hsl(var(--brand-hue) 25% 90%);
+  --surface2-light: hsl(var(--brand-hue) 20% 99%);
+  --surface3-light: hsl(var(--brand-hue) 20% 92%);
+  --surface4-light: hsl(var(--brand-hue) 20% 85%);
+  --surface-shadow-light: var(--brand-hue) 10% 20%;
+  --shadow-strength-light: 0.02;
+
+  --text-contrast-light: var(--black);
+  --text-inv-light: var(--white);
+
+  /* dark */
+  --brand-dark: hsl(
+    var(--brand-hue) calc(var(--brand-saturation) / 2)
+      calc(var(--brand-lightness) / 1.5)
+  );
+  --text1-dark: hsl(var(--brand-hue) 15% 85%);
+  --text2-dark: hsl(var(--brand-hue) 5% 65%);
+  --surface1-dark: hsl(var(--brand-hue) 10% 10%);
+  --surface2-dark: hsl(var(--brand-hue) 10% 15%);
+  --surface3-dark: hsl(var(--brand-hue) 5% 20%);
+  --surface4-dark: hsl(var(--brand-hue) 5% 25%);
+  --surface-shadow-dark: var(--brand-hue) 50% 3%;
+  --shadow-strength-dark: 0.8;
+
+  --text-contrast-dark: var(--white);
+  --text-inv-dark: var(--black);
+
+  /* dim */
+  --brand-dim: hsl(
+    var(--brand-hue) calc(var(--brand-saturation) / 1.25)
+      calc(var(--brand-lightness) / 1.25)
+  );
+  --text1-dim: hsl(var(--brand-hue) 15% 75%);
+  --text2-dim: hsl(var(--brand-hue) 10% 61%);
+  --surface1-dim: hsl(var(--brand-hue) 10% 20%);
+  --surface2-dim: hsl(var(--brand-hue) 10% 25%);
+  --surface3-dim: hsl(var(--brand-hue) 5% 30%);
+  --surface4-dim: hsl(var(--brand-hue) 5% 35%);
+  --surface-shadow-dim: var(--brand-hue) 30% 13%;
+  --shadow-strength-dim: 0.2;
+
+  --text-contrast-dim: var(--gray);
+}
+
+:root {
+  color-scheme: light;
+
+  /* set defaults */
+  --brand: var(--brand-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+  --surface1: var(--surface1-light);
+  --surface2: var(--surface2-light);
+  --surface3: var(--surface3-light);
+  --surface4: var(--surface4-light);
+  --surface-shadow: var(--surface-shadow-light);
+  --shadow-strength: var(--shadow-strength-light);
+  --text-contrast: var(--text-contrast-light);
+  --text-inv: var(--text-inv-light);
+
+  /* colors */
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --brand: var(--brand-light);
+    --text1: var(--text1-light);
+    --text2: var(--text2-light);
+    --surface1: var(--surface1-light);
+    --surface2: var(--surface2-light);
+    --surface3: var(--surface3-light);
+    --surface4: var(--surface4-light);
+    --surface-shadow: var(--surface-shadow-light);
+    --shadow-strength: var(--shadow-strength-light);
+    --text-contrast: var(--text-contrast-light);
+    --text-inv: var(--text-inv-light);
+  }
+}
+
+[color-scheme="light"] {
+  color-scheme: light;
+
+  --brand: var(--brand-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+  --surface1: var(--surface1-light);
+  --surface2: var(--surface2-light);
+  --surface3: var(--surface3-light);
+  --surface4: var(--surface4-light);
+  --surface-shadow: var(--surface-shadow-light);
+  --shadow-strength: var(--shadow-strength-light);
+
+  --text-contrast: var(--black);
+  --text-inv: var(--white);
+}
+
+[color-scheme="dark"] {
+  color-scheme: dark;
+
+  --brand: var(--brand-light);
+  --text1: var(--text1-light);
+  --text2: var(--text2-light);
+  --surface1: var(--surface1-light);
+  --surface2: var(--surface2-light);
+  --surface3: var(--surface3-light);
+  --surface4: var(--surface4-light);
+  --surface-shadow: var(--surface-shadow-light);
+  --shadow-strength: var(--shadow-strength-light);
+
+  --text-contrast: var(--black);
+  --text-inv: var(--white);
+}
+
+[color-scheme="dim"] {
+  color-scheme: "dim";
+
+  --brand: var(--brand-dim);
+  --text1: var(--text1-dim);
+  --text2: var(--text2-dim);
+  --surface1: var(--surface1-dim);
+  --surface2: var(--surface2-dim);
+  --surface3: var(--surface3-dim);
+  --surface4: var(--surface4-dim);
+  --surface-shadow: var(--surface-shadow-dim);
+  --shadow-strength: var(--shadow-strength-dim);
+
+  --text-contrast: 128, 128, 128;
+}
+
+/* shadows */
+
+.rad-shadow {
+  box-shadow: 0 2.8px 2.2px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+    0 6.7px 5.3px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.01)),
+    0 12.5px 10px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+    0 22.3px 17.9px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+    0 41.8px 33.4px
+      hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+    0 100px 80px hsl(var(--surface-shadow) / var(--shadow-strength));
+}
+
+.inner-shadow {
+  box-shadow: rgba(var(--text-inv), 0.17) 0px -23px 25px 0px inset,
+    rgba(var(--text-inv), 0.15) 0px -36px 30px 0px inset,
+    rgba(var(--text-inv), 0.1) 0px -79px 40px 0px inset,
+    rgba(var(--text-inv), 0.06) 0px 2px 1px,
+    rgba(var(--text-inv), 0.09) 0px 4px 2px,
+    rgba(var(--text-inv), 0.09) 0px 8px 4px,
+    rgba(var(--text-inv), 0.09) 0px 16px 8px,
+    rgba(var(--text-inv), 0.09) 0px 32px 16px;
+}
+
+.neu-shadow {
+  box-shadow: 2px 2px 10px #21212121, -2px -2px 10px #dedede21;
+}
+
+/* set standard values */
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #1111;
+  border: none;
+  border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+input,
+button,
+textarea,
+select {
+  padding: 1em 2em;
+
+  border: 2px solid transparent;
+  border-radius: 0.625em;
+
+  background-color: var(--surface3, transparent);
+}
+
+input:focus,
+button:focus,
+textarea:focus,
+select:focus,
+input:active,
+button:active,
+textarea:active,
+select:active {
+  border-color: var(--brand, darkviolet);
+}
+
+input:hover,
+button:hover,
+textarea:hover,
+select:hover {
+  border-color: var(--text2, lightgray);
+}
+
+/* transitions */
+
+* {
+  transition: background-color 0.3s ease-in-out, color 0.1s ease-in-out;
+}
